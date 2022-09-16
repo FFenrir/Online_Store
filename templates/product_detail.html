@@ -1,0 +1,43 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+
+{% block title %}<title>{{ product.name }}</title>{% endblock title %}
+
+{% block content %}
+
+<body>
+    <div class="name">
+        <h2>{{ product.Name }}</h2>
+    </div>
+    <div class="image-div">
+    <img src="{{ product.Image.url }}" class="image">
+    </div>
+    <div class="price">
+        <h2>{{ product.Price }}€</h2>
+    </div>
+    
+    {% if user.is_authenticated %}
+        <form action="{% url 'charge' %}" method="POST">
+            {% csrf_token %}
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="{{ stripe_key }}"
+                data-description="{{ product.name }}"
+                data-amount="{{ product.price }}"
+                data-locate="auto">
+            </script> 
+
+            <script>
+                document.getElementsByClassName("stripe-button-el")[0].style.display = 'none'; 
+            </script>
+            
+            <button type="submit" class="buy">Pay wiht card</button>
+        </form>    
+        {% else %}
+        <p class="login-required">Log in to buy this product</p>
+    {% endif %}
+    <div>
+        <p class="description">{{product.Description}}</p>
+    </div>
+</body>
+{% endblock content %}

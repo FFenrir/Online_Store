@@ -1,0 +1,25 @@
+{% include '_base.html' %}
+
+{% load static %}
+
+<title>FJStore | {{ product.Category }}</title>
+
+{% block content %}
+<div class="wrapper">
+{% for product in product_list %}
+  <div class="card">
+
+    <div class="imgBox">
+      <img src="{{product.Image.url}}" class="image">
+    </div>
+
+    <div class="contentBox">
+      <h3>{{product.Name}}</h3>
+      <h2 class="price">{{product.Price}}€</h2>
+      <a href="{{ product.get_absolute_url }}" class="info">Info</a>
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

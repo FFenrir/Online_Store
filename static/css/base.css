@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body {
+  background: /*rgb(63, 76, 119)*/#1A1A1D;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #1A1A1D;        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #C3073F;    /* color of the scroll thumb */
+  border-radius: 30px;       /* roundness of the scroll thumb */
+  border: 3px solid #1A1A1D;  /* creates padding around scroll thumb */
+}
+
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+  flex-wrap: wrap;
+  gap: 0 60%;
+  align-items: baseline;
+  margin-top: -1.5%;
+  margin-left: 3%;
+}
+
+.logo {
+  color: white;
+  font-size: 200%;
+  font-family: 'Alata', sans-serif;  
+}  
+
+.project-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 35px;
+}
+
+.vertical-line {
+  position: relative;
+  height: 25px;
+  width: 1px;
+  background-color: #C3073F;
+}
+
+.project-info .info-link {
+  color: white;
+  text-decoration: none;
+  font-size: 130%;
+  font-family: 'Ubuntu', sans-serif;
+  border-bottom: 2px solid #1A1A1D;
+}
+
+.project-info .info-link:hover {
+  border-bottom: 2px solid white;
+  transition: 1s;
+}
+
+.authentication  {
+  display: flex;
+  font-size: 1.2em;
+  color: white;
+  flex-wrap: wrap;
+  gap: 0 35px
+}
+
+.authentication a {
+  text-decoration: none;
+}
+
+.authentication .log-in {
+  font-size: 1.3em;
+  color:white;
+}
+
+.authentication .sign-up {
+  font-size: 1.3em;
+  color: white;
+}
+
+hr {
+  color: white;
+  width: 350px;
+  text-align: center;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -2%;
+  font-family: 'Poppins',sans-serif;
+
+}
+.navigation ul {
+  display: flex;
+  width: 350px;
+}
+.navigation ul li {
+  position: relative;
+  list-style: none;
+  width: 70px;
+  height: 70px;
+  z-index: 1;
+}
+.navigation ul li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+.navigation ul li a .icon {
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.7em;
+  text-align: center;
+  transition: 0.5s;
+  color: /*var(--clr)*/rgb(255, 255, 255);
+}
+.navigation ul li a .text {
+  position: absolute;
+  color: /*var(--clr)*/rgb(255, 255, 255);
+  font-weight: 400;
+  font-size: 0.85em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.navigation ul li.active a .text {
+  opacity: 1;
+  transform: translateY(30px);
+}

@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/Welcome.css' %}">
+    <title>Welcome to FJStore</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h4>FJStore</h4>
+        </div>
+        <div class="info">
+            <a class="info-link" href="#">About</a>
+            <a class="info-link" href="#">Contacts</a>
+        </div>
+    <div class="welcome">
+        <h3>Welcome<br>to <span>FJStore</span></h3>
+    </div>
+    <a class="store-link" href="{% url 'home' %}">GO TO STORE</a>     
+    </div>
+    <div class="blocks"> 
+        <div id="block_laptop" class="block laptop">
+            <a href="#" class="link-tag" style="position: absolute; top: 0; 
+            right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+            <div class="block-title">
+                <h4>Build your own setup</h4>
+            </div>
+            <div class="slides">
+                <a href="#block_TV" title="Prev">
+                    <div class="slide__prev">
+                        <span class="arrow arrow-left"></span>
+                    </div>
+                </a>
+                <a  href="#block_smartphone" title="Next">
+                    <div class="slide__next">
+                        <span class="arrow arrow-right"></span>
+                    </div>
+                </a>
+                </div>
+        </div>
+
+        <div id="block_smartphone" class="block smartphone">
+            <a href="#" class="link-tag" style="position: absolute; top: 0; 
+            right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+            <div class="block-title">
+                <h4>Find the best smartphone</h4>
+            </div>
+            <div class="slides">
+                <a  href="#block_laptop" title="Prev">
+                    <div class="slide__prev">
+                        <span class="arrow arrow-left"></span>
+                    </div>
+                </a>
+                <a  href="#block_TV" title="Next">
+                    <div class="slide__next">
+                        <span class="arrow arrow-right"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="block_TV" class="block TV">
+            <a href="#" class="link-tag" style="position: absolute; top: 0; 
+            right: 0; bottom: 0; left: 0; width: 100%; height: 100%;"></a>
+            <div class="block-title">
+                <h4>TV for your home</h4>
+            </div>
+            <div class="slides">
+                <a  href="#block_smartphone" title="Prev">
+                    <div class="slide__prev">
+                        <span class="arrow arrow-left"></span>
+                    </div>
+                </a>
+                <a  href="#block_laptop" title="Next">
+                    <div class="slide__next">
+                        <span class="arrow arrow-right"></span>
+                    </div>
+                </a>
+            </div>    
+        </div>
+
+    </div>
+</body>
+</html>

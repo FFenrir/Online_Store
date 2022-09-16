@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+body {
+    background-color: #252C58;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 100px;
+    color: #252C58;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: white;
+    text-align: center;
+    margin-top: 30%;
+    animation: tada;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+    overflow:hidden;
+}

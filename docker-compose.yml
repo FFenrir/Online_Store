@@ -1,0 +1,31 @@
+version: '3.7'
+
+
+services:
+  web:
+    build: .
+    command: python /OnlineStore/manage.py runserver 0.0.0.0:8000
+    environment:
+      - SECRET_KEY=<p_o3vp1rg5)t^lxm9-43%0)s-=1qpeq%o7gfq+e4#*!t+_ev82>
+      - DEBUG=True
+      - STRIPE_TEST_PUBLISHABLE_KEY=pk_test_51KaLfBKtaic90uL1ew6TsmnHRMNqQbeNUnAiiApHuuNQvOqgZO3LttBK99kZvSgDB0fCCUGiv2hApk7IgS5LpOjs00KFPmAgsI
+      - STRIPE_TEST_SECRET_KEY=sk_test_51KaLfBKtaic90uL1TCUEkvyVV3Vt7EeM6mbla3O7jiNjjkCvZDVHADSR1AkFO1bmw3utkMLX4v1EF8Oppn6W31I800N2NkUnff
+    volumes:
+      - .:/OnlineStore
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+
+  db:
+    image: postgres:14.5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/ 
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+      - POSTGRES_USER=Fenrir
+      - POSTGRES_PASSWORD=fenrir2204
+      - POSTGRES_DB=online_store_database
+volumes:
+  postgres_data:               
